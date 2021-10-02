@@ -89,7 +89,7 @@ if($operacion == 'VER' )
         $templete->assign('ID',base64_encode($producto['id']."Konnecta"));
     }
 
-    $templete->assign('READONLY','readonly');
+    $templete->assign('READONLY','readonly required');
 }
 
 
@@ -100,7 +100,7 @@ if($operacion == 'CREAR' )
     $templete->assign('ACTION','INSERTAR');
     $templete->assign('DISPLAY_EDIT','display:none');
     $templete->assign('BTN','<div  style="margin: 2em 0" class="col-sm-12"><input type="submit" class="btn btn-success" value="Enviar"></div>');
-
+	 $templete->assign('READONLY','required');
 }
 
 
