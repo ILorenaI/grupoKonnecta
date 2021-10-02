@@ -6,6 +6,9 @@ include('./includes/FastTemplate.php');
 include('./includes/funciones.php');
 
 $templete = new FastTemplate('./plantillas/producto');
+$usuariobd = $usuariobd;
+$clavebd = "";
+$dominiobd = "";
 
 /*
 Lista los productos
@@ -16,7 +19,7 @@ if(!$id && !$operacion)
 {
 	$templete->define(array('principal' => 'producto_listar.html'));
 
-    $conexion = new MySQLDB ("localhost","root","","inventario");
+    $conexion = new MySQLDB ($dominiobd,$usuariobd,$clavebd,"inventario");
     $conexion->connect();
     $c = $conexion->numRows("SELECT * FROM productos");
     $data = $conexion->getData("SELECT * FROM productos");
@@ -72,7 +75,7 @@ if($operacion == 'VER' )
 
     $id = str_replace("Konnecta","",base64_decode($id));
 
-    $conexion = new MySQLDB ("localhost","root","","inventario");
+    $conexion = new MySQLDB ($dominiobd,$usuariobd,$clavebd,"inventario");
     $conexion->connect();
     $data = $conexion->getData("SELECT * FROM productos WHERE id=$id");
     $conexion->close();
@@ -89,7 +92,7 @@ if($operacion == 'VER' )
         $templete->assign('ID',base64_encode($producto['id']."Konnecta"));
     }
 
-    $templete->assign('READONLY','readonly required');
+    $templete->assign('READONLY','readonly');
 }
 
 
@@ -100,7 +103,7 @@ if($operacion == 'CREAR' )
     $templete->assign('ACTION','INSERTAR');
     $templete->assign('DISPLAY_EDIT','display:none');
     $templete->assign('BTN','<div  style="margin: 2em 0" class="col-sm-12"><input type="submit" class="btn btn-success" value="Enviar"></div>');
-	 $templete->assign('READONLY','required');
+
 }
 
 
@@ -108,7 +111,7 @@ if($operacion == 'DRP' )
 {
     $id = str_replace("Konnecta","",base64_decode($id));
 
-    $conexion = new MySQLDB ("localhost","root","","inventario");
+    $conexion = new MySQLDB ($dominiobd,$usuariobd,$clavebd,"inventario");
     $conexion->connect();
     
     $data = $conexion->executeInstruction("CALL BorrarProducto($id); ");
@@ -127,7 +130,7 @@ if($operacion=='ACTUALIZAR')
 {
     $id = str_replace("Konnecta","",base64_decode($id));
 
-    $conexion = new MySQLDB ("localhost","root","","inventario");
+    $conexion = new MySQLDB ($dominiobd,$usuariobd,$clavebd,"inventario");
     $conexion->connect();
     
     $data = $conexion->executeInstruction("CALL ActualizarProducto($id
@@ -153,7 +156,7 @@ if($operacion=='INSERTAR')
 {
     $id = str_replace("Konnecta","",base64_decode($id));
 
-    $conexion = new MySQLDB ("localhost","root","","inventario");
+    $conexion = new MySQLDB ($dominiobd,$usuariobd,$clavebd,"inventario");
     $conexion->connect();
     
     $data = $conexion->executeInstruction("CALL InsertarProducto('$nombre'
@@ -178,7 +181,7 @@ if($operacion=='VND')
 {
     $id = str_replace("Konnecta","",base64_decode($id));
 
-    $conexion = new MySQLDB ("localhost","root","","inventario");
+    $conexion = new MySQLDB ($dominiobd,$usuariobd,$clavebd,"inventario");
     $conexion->connect();
     $hoy = date("Y-m-d",time());
     $data = $conexion->executeInstruction("CALL VendeProducto ($id
