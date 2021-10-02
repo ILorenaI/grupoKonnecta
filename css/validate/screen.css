@@ -1,0 +1,100 @@
+/**********************************
+Use: cmxform template
+
+***********************************/
+
+/*@import "reset.css";
+@import "core.css";
+
+@import "cmxformTemplate.css";
+@import "cmxform.css";*/
+
+
+label.error {
+	color: rgb(183 0 0);
+}
+
+.obg{
+	color: rgb(183 0 0);
+}
+
+#paginas-contenido{
+	background-color:#f6f8f9;
+	border: 1px solid #dfdfdf;
+	border-radius: 5px;
+	padding-left: 0;
+    padding-right: 0;
+}
+
+.titulo_seccion{
+	color: #004884;
+}
+
+.form-check {
+    padding-left: 4.25rem!important;
+}
+
+input[type=radio]{
+	left: 3vw;
+	width: 20px;
+	height: 20px;
+	background: #004884 0% 0% no-repeat padding-box;
+	color: #004884;
+	opacity: 1;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+input[type=radio]:checked + label{
+	color: #004884;
+	font-weight: bold;
+}
+
+
+.scf_banner {
+	background-repeat: no-repeat;
+	background-size: contain;
+	margin-top: -30px;
+  }
+
+.scf_banner h4{
+	margin-top: 26vw;
+}
+
+.hidden{
+	display:none;
+}
+
+.share-box { 
+	margin-bottom: 10px !important; 
+	padding-top: 0px !important; 
+	padding-bottom: 0px !important; 
+	height: 50px; padding-right: 0px; 
+	padding-left: 0px;
+}
+.fusion-content-widget-area .widget { 
+	margin-bottom: 0px;
+}
+.ocultar{
+	display:none;
+}
+.form-check-label{
+	text-align: justify;
+}
+.swal2-container{
+	padding-top: 21vw;
+}
+.login{
+	text-align: right;
+}
+.login span{
+	background-color: #0f57aa;
+	color: white;
+	padding: 10px 40px;
+	margin-right: -2.2vw;
+	text-align: right;
+}
+.login span:hover{
+	background-color: #439aff;
+	color: white;
+}
