@@ -6,9 +6,9 @@ include('./includes/FastTemplate.php');
 include('./includes/funciones.php');
 
 $templete = new FastTemplate('./plantillas/producto');
-$usuariobd = $usuariobd;
+$usuariobd = "root";
 $clavebd = "";
-$dominiobd = "";
+$dominiobd = "localhost";
 
 /*
 Lista los productos
