@@ -5,18 +5,11 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Superintendencia de Transporte – Inspección, vigilancia y control en la prestación del servicio público de transporte</title>
+		<title>Inventario</title>
 		
 		<!-- For iPad Retina display -->
 		<script type="text/javascript" src="../js/jquery.js"></script>
 		<script async="" src="../js/js"></script>
-
-		<meta property="og:title" content="HOME">
-		<meta property="og:url" content="https://www.supertransporte.gov.co/">
-		<meta property="og:site_name" content="Superintendencia de Transporte">
-		<meta property="og:description" content="Plataformas de Transporte Aquí encontrarán las plataformas tecnológicas que cumplen con todo los requisitos para operar">
-		<meta property="og:image" content="https://www.supertransporte.gov.co/wp-content/uploads/2019/08/supertransporte.png">
-
 
 		<!-- CSS -->
 		<link rel="stylesheet" href="../css/bootstrap/bootstrap.min.css">
@@ -53,11 +46,6 @@
 				</div>
 			</div>
 			
-			<div style="margin-bottom:45px" class="fusion-builder-row fusion-row login justify-content-center">
-				<div class="fusion-text col-sm-12">
-					<span class="" style="text-align: left;">{NOMBRE_USUARIO}</span>
-				</div>
-			</div>
 
 			<div class="col-lg-9 col-sm-12">
                 <div class="row">
@@ -119,185 +107,7 @@
 
 
 	<script type="text/javascript" src="../js/wp-embed.min.js"></script>
-	<script type="text/javascript" src="../js/form-dinamicos.js"></script>
 	
-	<script src="https://www.google.com/recaptcha/api.js?render=6Lez_tMbAAAAADcH79zrcQlvmRHBiVuakmXgXADK" ></script>
-		<script
-		  src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-		  integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
-		  crossorigin="anonymous" async="async"></script>	
-		  
-	<script type="text/javascript">
-		$(window).load(function() {
-			var $jq = jQuery.noConflict();
-			$(".loader").fadeOut("slow");
-			{TEMPORIZADOR}
-		});
-
-		document.querySelector('#dinamic').addEventListener('submit', function(e) {
-			var form = this;
-			e.preventDefault(); // <--- prevent form from submitting
-			var v = $('#dinamic').valid();
-			validar_checkbox('required-ch-uq');
-			cadena = '<p style="text-align:justify">El formulario será enviado con la información diligenciada</p>';
-			{RESUMEN_DATOS}
-			if (v == true){
-				Swal.fire({
-					title: '{FORMULARIO_NOMBRE}',
-					html: cadena,
-					icon: 'info',
-					showCancelButton: true,
-					confirmButtonText: 'ACEPTAR',
-					cancelButtonText: 'CANCELAR',
-					customClass: 'swal-wide',
-				}).then((result) => {
-					if (result.isConfirmed) {
-						var $jq = jQuery.noConflict();
-						r = 'S';
-						form.submit();
-					} else {
-						//Swal.fire('Changes are not saved'+isConfirm, '', 'info');
-						r = 'N';
-					}
-				});
-			}
-			
-			/*if(r == false || ar =='N') {
-				return false;
-			}
-			else
-			{
-				loading_validate_form('dinamic');
-			}*/
-		});
-
-		/*$('#form_button').on('click', function(){
-			validar_checkbox('required-ch-uq');
-			var r = confirm('El formulario será enviado con las respuestas seleccionadas.');
-			if(r == false) {
-				return false;
-			}
-			else
-			{
-				loading_validate_form('dinamic');
-			}
-		});*/
-	</script>
-
-	<script type="text/javascript">
-		$(document).ready(function(){
-			$('#dinamic').validate();
-
-			jQuery.validator.addMethod("lettersonly", function(value, element) {
-				return this.optional(element) || /^[a-zÁÉÍÓÚáéíóúñÑ \s]+$/i.test(value);
-			}, "Solo letras");
-
-			jQuery.validator.addMethod("placa", function(value, element) {
-				return this.optional(element) || /^[a-z0-9]+$/i.test(value);
-			}, "No es una placa de vehiculo valida");
-
-			jQuery.validator.addMethod("fechafuturo", function(value, element) {
-				let d = value.valueAsDate.getTime();
-  				let ahora = new Date().getTime()
-				
-  				if(ahora - d >= 0){
-					  console.log("OK")
-				}else{
-					console.log("NOT OK")
-				}
-
-				return true;
-			}, "La fecha seleccionada debe ser mayor a la fecha actual");
-
-			jQuery.validator.addClassRules({
-				textarea: {
-					minlength: 30,
-					maxlength: 1000
-				},
-				telefono: {
-					minlength: 7,
-					maxlength: 30
-				},
-				celular: {
-					minlength: 10,
-					maxlength: 10
-				},
-				placa: {
-					minlength: 5,
-					maxlength: 10,
-					placa : true
-				},
-				letras: {
-					lettersonly: true 
-				}
-			});
-
-			var testfield = $('.moneda_cop input');
-			testfield.mask('000.000.000.000.000', {reverse: true});
-			
-
-			{JS_VALIDACIONES}
-			{CLONAR_SECCION}
-			{DEPENDENCIA}
-		});
-	</script>
-
-	<script type="text/javascript">
-		function validar_pagina(numero){
-			if($("#dinamic").valid()){ 
-				var actual = numero - 1;
-				$("#p"+numero).addClass("active show");
-				$("#p"+numero+'-tab').addClass("active");
-				$("#p"+numero+'-tab').removeClass("advance");
-
-				$("#p"+actual+'-tab').removeClass("active");
-				$("#p"+actual+'-tab').addClass("advance");
-				$("#p"+actual).removeClass("active show");
-
-				var progress = $('.progress-bar');
-				var prog = (numero == 4) ? 100 : (25 * (numero-1)) + 3;
-				progress.width(prog + '%');
-				
-				document.getElementById("btn_top").click();
-
-			} else {
-				return false;
-			}
-
-			return false;
-		}
-	</script>
-
-	<script type="text/javascript">
-		function pagina_ant(numero){
-
-				var pagina_sig = numero + 1;
-				$("#p"+numero).addClass("active show");
-				$("#p"+numero+'-tab').addClass("active");
-				$("#p"+numero+'-tab').removeClass("advance");
-
-				$("#p"+pagina_sig+'-tab').addClass("advance");
-				$("#p"+pagina_sig).removeClass("active show");
-				$("#p"+pagina_sig+'-tab').removeClass("active");
-				
-				
-				document.getElementById("btn_top").click();
-
-		}
-	</script>
-	
-   	<script>
-		$('#dinamic').submit(function(event) {
-			event.preventDefault();
-			grecaptcha.ready(function() {
-				grecaptcha.execute('6Lez_tMbAAAAADcH79zrcQlvmRHBiVuakmXgXADK', {action: 'registro'}).then(function(tokenC) {
-					$('#dinamic').prepend('<input type="hidden" name="tokenCaptcha" value="' + tokenC + '">');
-					$('#dinamic').prepend('<input type="hidden" name="action" value="registro">');
-				});;
-			});
-		});
-
-  	</script> 
 	
 
 </body>
