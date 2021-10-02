@@ -1,0 +1,147 @@
+<!-- saved from url=(0035)https://www.supertransporte.gov.co/ -->
+<!doctype html>
+<html class="ua-windows_nt ua-windows_nt-10 ua-windows_nt-10-0 ua-desktop ua-desktop-windows ua-webkit ua-webkit-537 ua-webkit-537-36 ua-opera ua-opera-68 ua-opera-68-0 ua-opera-68-0-3618 ua-opera-68-0-3618-173 js applicationcache geolocation history postmessage websockets localstorage sessionstorage websqldatabase webworkers hashchange audio canvas canvastext video webgl cssgradients multiplebgs opacity rgba inlinesvg hsla supports svgclippaths smil no-touchevents fontface generatedcontent textshadow cssanimations backgroundsize borderimage borderradius boxshadow flexbox cssreflections csstransforms csstransforms3d csstransitions" lang="es" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#" data-useragent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36 OPR/68.0.3618.173" style="height: 100%;">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Superintendencia de Transporte – Inspección, vigilancia y control en la prestación del servicio público de transporte</title>
+		
+		<!-- For iPad Retina display -->
+		<script type="text/javascript" src="../js/jquery.js"></script>
+		<script async="" src="../js/js"></script>
+
+		<meta property="og:title" content="HOME">
+		<meta property="og:url" content="https://www.supertransporte.gov.co/">
+		<meta property="og:site_name" content="Superintendencia de Transporte">
+		<meta property="og:description" content="Plataformas de Transporte Aquí encontrarán las plataformas tecnológicas que cumplen con todo los requisitos para operar">
+		<meta property="og:image" content="https://www.supertransporte.gov.co/wp-content/uploads/2019/08/supertransporte.png">
+
+
+		<!-- CSS -->
+		<link rel="stylesheet" href="../css/bootstrap/bootstrap.min.css">
+		<link rel="stylesheet" href="../css/govco/cdn-st.css">
+		<link rel="stylesheet" href="../css/temporizador.css" id="fusion-dynamic-css-css"  type="text/css" media="all">
+		<link rel="stylesheet" href="../css/validate/screen.css">
+		<link rel="stylesheet" href="../css/sweetalert/sweetalert2.min.css">
+		<link rel="stylesheet" href="../css/font-awesome.min.css">
+		<!--<link rel="stylesheet" href="../css/bootstrap-select.css">-->
+
+
+		<!-- JS -->
+		<script src="../js/bootstrap/bootstrap.bundle.min.js"></script>
+
+		<script src="../js/jquery.js" type="text/javascript"></script>	
+		<script src="../js/jquery-1.11.1.js" type="text/javascript"></script>
+		<script src="../js/jquery.validate.js" type="text/javascript"></script>
+		<script src="../js/temporizador.js" type="text/javascript" ></script>
+		<script src="../js/sweetalert/sweetalert2.min.js" type="text/javascript" ></script>
+		<script src="../js/mask/jquery.mask.js" type="text/javascript" ></script>
+		<script src="../js/util.js" type="text/javascript" ></script>
+		<!--<script src="../js/bootstrap-select.js" type="text/javascript" ></script>-->
+	</head>
+<body>	
+	<div class="container" id="container">
+
+		<div class="container-fluid" style="max-width:100%;margin:45px 0px">
+			<div class="loader"></div>
+			<div class="fusion-builder-row fusion-row  justify-content-center">
+				<div class="fusion-text col-sm-12">
+					<div class='alert alert-danger' style="{DISPLAY}">
+						{MENSAJE}
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-8 col-sm-12">
+                <div class="row">
+
+					<div style="margin: 2em 0" id="btn-volver">
+						<div class="col-sm-12 col-lg-3">
+							<a  class="btn btn-primary btn-sm" href="?"><i class="fa fa-undo"></i> Volver</a>
+						</div>
+					</div>
+
+                    <div class="col-sm-12">
+						<h2 class="headline-xl-govco">
+							Producto: {NOMBRE}
+						</h2>
+					</div>
+
+					<form action="?operacion={ACTION}" method="POST" id="form">
+
+					<div class="row" style="margin: 2em 0;{DISPLAY_EDIT}" id="btn-editar" >
+						<div class="col-sm-12 col-lg-3">
+							<a onclick="editar();"  class="btn btn-success btn-sm" href="#editar"><i class="fa fa-edit"></i> Actualizar</a>
+						</div>
+					</div>
+
+					<div class="row">
+
+						<div class="col-sm-12 col-lg-6" >
+							<label class="label">
+								Referencia:
+							</label>
+							<input type="text" name="referencia" class="form-control" value="{REFERENCIA}" {READONLY}>
+						</div>
+						<div class="col-sm-12 col-lg-6">
+							<label class="label">
+								Nombre:
+							</label>
+							<input type="text" name="nombre" class="form-control" value="{NOMBRE}" {READONLY}>
+						</div>
+						<div class="col-sm-12 col-lg-6">
+							<label class="label">
+								Categoria:
+							</label>
+							<input type="text" name="categoria" class="form-control" value="{CATEGORIA}" {READONLY}>
+						</div>
+						<div class="col-sm-12 col-lg-6">
+							<label class="label">
+								Peso:
+							</label>
+							<input type="number" name="peso" class="form-control" value="{PESO}" {READONLY}>
+						</div>
+						<div class="col-sm-12 col-lg-6">
+							<label class="label">
+								Stock:
+							</label>
+							<input type="number" name="stock" class="form-control" value="{STOCK}" {READONLY}>
+						</div>
+						<div class="col-sm-12 col-lg-6">
+							<label class="label">
+								Precio:
+							</label>
+							$<input type="number" name="precio" class="form-control" value="{PRECIO}" {READONLY}>
+						</div>
+						{BTN}
+					</form>
+                </div>
+    
+            </div>
+
+		</div>
+					
+	</div>
+
+
+	<script type="text/javascript" src="../js/wp-embed.min.js"></script>
+	<script type="text/javascript" src="../js/form-dinamicos.js"></script>
+
+
+	<script type="text/javascript">
+
+		function editar(){
+			var v = $("input").prop('{READONLY}',false);
+			var b = $("#btn-editar").css('display','none');
+			$('#form').append('<div  style="margin: 2em 0" class="col-sm-12"><input type="submit" class="btn btn-success" value="Enviar"></div>');
+			$('#form').prepend('<input type="hidden" name="id" value="{ID}"/>');
+
+		}
+
+
+	</script>
+	
+
+</body>
+</html>
